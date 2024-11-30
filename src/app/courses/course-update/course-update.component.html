@@ -1,0 +1,39 @@
+<br> 
+<div class = "container">
+  <div class = "col-12 offset-3">
+    <div class="card" style="width: 25rem;">
+      <div class="card-header" style="background-color: #e3f2fd;">
+        <h3>Update Course</h3>                    
+      </div>
+      <form [formGroup]="UpdateCourseForm">
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" id="name">
+            <div *ngIf="UpdateCourseForm.controls['name'].invalid && (UpdateCourseForm.controls['name'].dirty || UpdateCourseForm.controls['name'].touched)" class="aler alert-danger">
+              <div *ngIf="UpdateCourseForm.controls['name'].errors?.['required']">Name is required.</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="form-label">Duration</label>
+            <input type="text" class="form-control" formControlName="duration" id="duration">
+            <div *ngIf="UpdateCourseForm.controls['duration'].invalid && (UpdateCourseForm.controls['duration'].dirty || UpdateCourseForm.controls['duration'].touched)" class="aler alert-danger">
+              <div *ngIf="UpdateCourseForm.controls['duration'].errors?.['required']">Duration is required.</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="form-label">Description</label>
+            <input type="text" class="form-control" formControlName="description" id="description">
+            <div *ngIf="UpdateCourseForm.controls['description'].invalid && (UpdateCourseForm.controls['description'].dirty || UpdateCourseForm.controls['description'].touched)" class="aler alert-danger">
+              <div *ngIf="UpdateCourseForm.controls['description'].errors?.['required']">Description is required.</div>
+            </div>
+          </div>
+        </div>
+        <div class = "card-footer" style="background-color: #e3f2fd;">
+          <button (click)="Update()" (click)="navToHome()" class="btn btn-success">Submit</button>
+          <button (click)="Cancel()" class="btn btn-danger" style="float: inline-end;">Cancel</button>
+        </div>      
+      </form>     
+    </div>
+  </div>
+</div>

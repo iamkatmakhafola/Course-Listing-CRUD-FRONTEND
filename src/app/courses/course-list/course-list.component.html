@@ -1,0 +1,37 @@
+<br>
+<h1>Course Listing</h1>
+<div class = "container">
+    <br>
+    <div class = "row">
+        <div class = "col-4" *ngFor="let item of courses">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header" style="background-color: #e3f2fd;">
+                    <h3 class="card-title">{{item.name}}</h3>
+                    <p class="card-text">Duration: {{item.duration}}</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Description: {{item.description}}</p>                
+                </div>
+                <div class = "card-footer" style="background-color: #e3f2fd;">
+                    <div class = "container">
+                        <div class = "row">
+                            <div class = "col-6 text-start">
+                                <button class="btn btn-success" routerLink="/update/{{item.courseId}} ">Edit</button>
+                            </div>
+                            <div class = "col-6 text-end">
+                                <button class="btn btn-danger" (click)="DeleteCourse(item.courseId)" (click)="ReloadList()">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+
+
+
+
